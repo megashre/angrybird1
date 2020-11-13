@@ -1,0 +1,22 @@
+const Engine=Matter.Engine;
+const World=Matter.World;
+const Bodies=Matter.Bodies;
+
+
+var myengine,myworld;
+var object;
+function setup(){
+  createCanvas(800,400);
+  myengine=Engine.create();
+  myworld=myengine.myworld;
+  object=Bodies.rectangle(400,200,40,40);
+  World.add(myworld,object);
+}
+
+
+function draw(){
+  background(0);
+  Engine.update(myengine)
+  rect(object.position.x,object.position.y,40,40);
+  drawSprites();
+}
